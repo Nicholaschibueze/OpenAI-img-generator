@@ -18,16 +18,25 @@ body {
   line-height: 1.5;
   color: #333;
   background: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navbar */
 .navbar {
   background: #333;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.navbar .logo h2 {
+  font-size: 1.25rem;
 }
 
 .navbar ul {
@@ -35,32 +44,21 @@ body {
   display: flex;
 }
 
-.navbar ul li {
-  margin-left: 1rem;
-}
-
 .navbar a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .navbar a:hover {
   color: var(--primary-color);
 }
 
-/* Showcase */
+/* Showcase Section */
 .showcase {
-  height: 450px;
   width: 100%;
   background: var(--primary-color);
-}
-
-.showcase h1 {
-  font-size: 2.5rem;
-  color: #333;
-  text-align: center;
-  padding: 1rem 0;
+  padding: 2.5rem 1rem;
 }
 
 .showcase form {
@@ -68,51 +66,94 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.showcase h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .showcase form input,
-form select {
-  font-size: 20px;
-  width: 500px;
+.showcase form select {
+  font-size: 1rem;
+  width: 100%;
   max-width: 500px;
-  padding: 1rem;
+  padding: 0.85rem 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 1rem;
+  background-color: #fff;
 }
 
 form button {
-  font-size: 20px;
-  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  padding: 0.85rem 2rem;
   border: none;
   border-radius: 5px;
   background: #333;
   color: #fff;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 0.5rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  width: 100%;
+  max-width: 500px;
 }
 
 form button:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
+  background-color: #222;
 }
 
-/* Image */
-
+/* Generated Image Section */
 .image {
   width: 100%;
-  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+}
+
+.image-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 img {
   display: block;
-  margin: auto;
+  margin: 1rem auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .msg {
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   text-align: center;
   margin-top: 1rem;
+  word-wrap: break-word;
 }
 
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .showcase h1 {
+    font-size: 1.5rem;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
